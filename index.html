@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ФОП Гринчук — реклама і маркетинг</title>
+<meta name="description" content="Реклама та маркетингові послуги: таргетована реклама, Google Ads, SMM, дизайн, сайти, Telegram-реклама. Залиште заявку — відповімо швидко.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;800&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/*
+VOICE: впевнено, просто, по-діловому — як рекламна афіша, а не корпоративна брошура
+IDEA: білборд на вулиці — великий сигнал, що його видно здалеку
+PICTURE: SVG-мегафон, з якого розходяться хвилі до білборда з заявками
+COLOUR and TYPE: кобальт #1536d4 поле, білий, жовтий сигнал #ffe04a; Unbounded + Manrope
+LAYOUT: шапка, афіша з картинкою, сітка послуг, як працюємо, форма в одну колонку, футер
+*/
+:root{color-scheme:light dark;
+--bg:light-dark(#ffffff,#0b1230);--ink:light-dark(#0d1433,#eef1ff);--soft:light-dark(#4a5375,#aab3d6);
+--card:light-dark(#f3f5ff,#131c45);--line:light-dark(#dfe4fb,#253066);
+--blue:#1536d4;--blue2:#0e2699;--sun:#ffe04a;--ok:#13a463;--err:#d8342b}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Manrope,system-ui,sans-serif;overflow-x:clip}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+a{color:inherit}
+h1,h2,h3{font-family:Unbounded,Manrope,sans-serif;line-height:1.08;text-wrap:balance;margin:0}
+h2{font-size:clamp(28px,4vw,42px)}
+.wrap{max-width:1180px;margin:0 auto}
+.band{padding:clamp(40px,6vw,88px) max(5vw,16px)}
+/* шапка */
+header{position:sticky;top:0;z-index:5;background:var(--blue);color:#fff}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px max(5vw,16px);flex-wrap:wrap}
+.logo{font:800 20px Unbounded,sans-serif;text-decoration:none;display:flex;align-items:center;gap:10px}
+.logo i{width:14px;height:14px;border-radius:50%;background:var(--sun);display:inline-block}
+nav{display:flex;gap:20px;flex-wrap:wrap;align-items:center}
+nav a{text-decoration:none;font-weight:600;font-size:15px;opacity:.9}
+nav a:hover{opacity:1;text-decoration:underline}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 26px;border-radius:999px;border:0;
+background:var(--sun);color:#0d1433;font:700 16px Manrope,sans-serif;text-decoration:none;cursor:pointer;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,nav a:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+nav .btn{min-height:40px;padding:0 18px;font-size:15px;opacity:1}
+/* афіша */
+.hero{background:var(--blue);color:#fff;padding-top:clamp(28px,4vw,56px)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:center}
+.hero h1{font-size:clamp(34px,5.4vw,60px)}
+.hero h1 span{background:var(--sun);color:#0d1433;padding:0 .18em;border-radius:8px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.hero p{font-size:18px;max-width:34em;opacity:.92;margin:22px 0 30px}
+.hero .row{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.ghost{background:transparent;color:#fff;box-shadow:inset 0 0 0 2px rgba(255,255,255,.55)}
+.fig{position:relative;aspect-ratio:1/0.86;width:100%}
+.fig svg{position:absolute;inset:0;width:100%;height:100%}
+.wave{transform-origin:150px 300px;animation:pulse 2.6s ease-out infinite}
+.wave.b{animation-delay:.6s}.wave.c{animation-delay:1.2s}
+@keyframes pulse{0%{opacity:0;transform:scale(.7)}30%{opacity:1}100%{opacity:0;transform:scale(1.15)}}
+@media(prefers-reduced-motion:reduce){.wave{animation:none;opacity:.8}.btn{transition:none}html{scroll-behavior:auto}}
+.facts{display:flex;gap:28px;flex-wrap:wrap;margin-top:34px;font-size:15px;opacity:.9}
+.facts b{display:block;font:800 22px Unbounded,sans-serif;color:var(--sun)}
+/* послуги */
+.lead{color:var(--soft);max-width:40em;margin:14px 0 36px;font-size:17px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,270px),1fr));gap:18px}
+.svc{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:10px}
+.svc svg{width:44px;height:44px}
+.svc h3{font-size:18px}
+.svc p{margin:0;color:var(--soft);font-size:15.5px;flex:1}
+.svc button{align-self:flex-start;background:none;border:0;padding:8px 0;font:700 15px Manrope,sans-serif;color:var(--blue);cursor:pointer;min-height:44px}
+:root[data-theme=dark] .svc button{color:var(--sun)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]) .svc button{color:var(--sun)}}
+.svc button:hover{text-decoration:underline}
+/* кроки */
+.steps{background:var(--card)}
+.steps ol{list-style:none;padding:0;margin:36px 0 0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;counter-reset:s}
+.steps li{counter-increment:s;position:relative;padding-top:58px}
+.steps li::before{content:counter(s);position:absolute;top:0;left:0;width:44px;height:44px;border-radius:50%;background:var(--blue);color:#fff;
+display:grid;place-items:center;font:800 18px Unbounded,sans-serif}
+.steps h3{font-size:17px;margin-bottom:6px}
+.steps p{margin:0;color:var(--soft);font-size:15.5px}
+/* форма */
+.order{background:var(--blue);color:#fff}
+.order .wrap{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(24px,5vw,64px);align-items:start}
+.order .lead{color:#dfe5ff}
+form{background:#fff;color:#0d1433;border-radius:24px;padding:clamp(20px,3vw,34px);display:grid;gap:16px;box-shadow:0 24px 60px rgba(5,14,70,.35)}
+label{font-weight:700;font-size:15px;display:grid;gap:6px}
+label small{font-weight:400;color:#5a6286}
+input,select,textarea{font:16px Manrope,sans-serif;width:100%;padding:12px 14px;min-height:48px;border-radius:12px;border:1.5px solid #c9d0ef;background:#f8f9ff;color:#0d1433}
+textarea{min-height:130px;resize:vertical}
+input:invalid:not(:placeholder-shown),textarea:invalid:not(:placeholder-shown){border-color:var(--err)}
+form .btn{width:100%;background:var(--blue);color:#fff;font-size:17px;min-height:54px}
+form .btn[disabled]{opacity:.6;cursor:wait}
+.note{font-size:13px;color:#5a6286;margin:0}
+.msg{display:none;border-radius:14px;padding:14px 16px;font-weight:600}
+.msg.ok{display:block;background:#e3f7ec;color:#0b6b40}
+.msg.bad{display:block;background:#fde8e6;color:#a1241d}
+.contacts{margin-top:28px;display:grid;gap:8px;font-size:16px}
+.contacts a{color:var(--sun);font-weight:700;text-decoration:none}
+footer{padding:28px max(5vw,16px);font-size:14px;color:var(--soft)}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media(max-width:860px){
+ .hero .wrap,.order .wrap{grid-template-columns:minmax(0,1fr)}
+ .fig{max-width:520px;margin:0 auto}
+ .steps ol{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:600px){
+ nav a:not(.btn){display:none}
+ .steps ol{grid-template-columns:minmax(0,1fr)}
+ .hero p{font-size:17px}
+}
+</style>
+</head>
+<body>
+
+<header>
+ <div class="wrap">
+  <a class="logo" href="#top"><i></i>ФОП Гринчук</a>
+  <nav>
+   <a href="#services">Послуги</a>
+   <a href="#how">Як працюємо</a>
+   <a href="#contact">Контакти</a>
+   <a class="btn" href="#order">Замовити</a>
+  </nav>
+ </div>
+</header>
+
+<section class="hero band" id="top">
+ <div class="wrap">
+  <div>
+   <h1>Реклама, яка приводить <span>клієнтів</span></h1>
+   <p>Налаштуємо рекламу в соцмережах і Google, оформимо ваші сторінки, зробимо дизайн і сайт. Розкажіть про свій бізнес — запропонуємо, з чого почати.</p>
+   <div class="row">
+    <a class="btn" href="#order">Замовити послугу</a>
+    <a class="btn ghost" href="#services">Подивитися послуги</a>
+   </div>
+   <div class="facts">
+    <div><b>24 год</b>відповідь на заявку</div>
+    <div><b>0 ₴</b>консультація і розрахунок</div>
+    <div><b>Онлайн</b>працюємо дистанційно</div>
+   </div>
+  </div>
+  <div class="fig" aria-hidden="true">
+   <svg viewBox="0 0 600 520">
+    <defs>
+     <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#dfe5ff"/></linearGradient>
+     <linearGradient id="g2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe979"/><stop offset="1" stop-color="#f5c400"/></linearGradient>
+    </defs>
+    <!-- хвилі -->
+    <g fill="none" stroke="#ffe04a" stroke-width="10" stroke-linecap="round">
+     <path class="wave" d="M262 220 q40 80 0 160"/>
+     <path class="wave b" d="M300 185 q60 115 0 230"/>
+     <path class="wave c" d="M340 150 q80 150 0 300"/>
+    </g>
+    <!-- мегафон -->
+    <ellipse cx="150" cy="470" rx="120" ry="16" fill="#0e2699"/>
+    <rect x="72" y="330" width="34" height="120" rx="12" fill="#0e2699"/>
+    <path d="M60 255 L220 175 L220 425 L60 345 Z" fill="url(#g1)"/>
+    <path d="M60 300 L220 300 L220 425 L60 345 Z" fill="#c9d2fb"/>
+    <rect x="30" y="252" width="46" height="96" rx="14" fill="url(#g2)"/>
+    <ellipse cx="222" cy="300" rx="26" ry="126" fill="#ffe04a"/>
+    <ellipse cx="226" cy="300" rx="14" ry="104" fill="#f2be00"/>
+    <!-- білборд -->
+    <rect x="392" y="388" width="14" height="110" fill="#0e2699"/>
+    <rect x="512" y="388" width="14" height="110" fill="#0e2699"/>
+    <rect x="370" y="60" width="200" height="330" rx="22" fill="#0e2699"/>
+    <rect x="384" y="74" width="172" height="302" rx="14" fill="#ffffff"/>
+    <g font-family="Manrope,sans-serif" font-weight="700">
+     <rect x="400" y="94" width="140" height="56" rx="12" fill="#eef1ff"/>
+     <circle cx="424" cy="122" r="12" fill="#1536d4"/>
+     <rect x="444" y="110" width="80" height="9" rx="4" fill="#1536d4"/>
+     <rect x="444" y="126" width="56" height="8" rx="4" fill="#aab3d6"/>
+     <rect x="400" y="162" width="140" height="56" rx="12" fill="#eef1ff"/>
+     <circle cx="424" cy="190" r="12" fill="#13a463"/>
+     <rect x="444" y="178" width="70" height="9" rx="4" fill="#1536d4"/>
+     <rect x="444" y="194" width="60" height="8" rx="4" fill="#aab3d6"/>
+     <rect x="400" y="230" width="140" height="56" rx="12" fill="#eef1ff"/>
+     <circle cx="424" cy="258" r="12" fill="#ffb000"/>
+     <rect x="444" y="246" width="84" height="9" rx="4" fill="#1536d4"/>
+     <rect x="444" y="262" width="48" height="8" rx="4" fill="#aab3d6"/>
+     <rect x="400" y="304" width="140" height="52" rx="26" fill="#ffe04a"/>
+     <text x="470" y="336" text-anchor="middle" font-size="18" fill="#0d1433">+ заявка</text>
+    </g>
+   </svg>
+  </div>
+ </div>
+</section>
+
+<section class="band" id="services">
+ <div class="wrap">
+  <h2>Послуги</h2>
+  <p class="lead">Беремо одну задачу або ведемо рекламу комплексно. Ціну рахуємо під ваш бюджет і мету — після короткої розмови.</p>
+  <div class="grid" id="svcGrid"></div>
+ </div>
+</section>
+
+<section class="band steps" id="how">
+ <div class="wrap">
+  <h2>Як працюємо</h2>
+  <ol>
+   <li><h3>Заявка</h3><p>Ви описуєте задачу у формі нижче — це займає хвилину.</p></li>
+   <li><h3>Розмова</h3><p>Зв'язуємося, уточнюємо мету, аудиторію і бюджет.</p></li>
+   <li><h3>Запуск</h3><p>Готуємо матеріали, погоджуємо з вами і запускаємо.</p></li>
+   <li><h3>Звіт</h3><p>Показуємо результати і що можна покращити далі.</p></li>
+  </ol>
+ </div>
+</section>
+
+<section class="band order" id="order">
+ <div class="wrap">
+  <div>
+   <h2>Замовити послугу</h2>
+   <p class="lead">Заповніть форму — ми отримаємо вашу заявку на пошту і відповімо протягом доби.</p>
+   <div class="contacts" id="contact">
+    <div>Пошта: <a href="mailto:hrynchukihor@gmail.com">hrynchukihor@gmail.com</a></div>
+    <div>Телефон: <a href="tel:+380969004710">+380 96 900 47 10</a></div>
+   </div>
+  </div>
+  <form id="orderForm" action="https://formsubmit.co/hrynchukihor@gmail.com" method="POST" novalidate>
+   <input type="hidden" name="_subject" value="Нова заявка з сайту ФОП Гринчук">
+   <input type="hidden" name="_template" value="table">
+   <input type="hidden" name="_captcha" value="false">
+   <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+   <label for="f-service">Послуга
+    <select id="f-service" name="Послуга" required></select>
+   </label>
+   <label for="f-desc">Опис задачі
+    <textarea id="f-desc" name="Опис" required placeholder="Наприклад: кав'ярня в Києві, хочемо більше замовлень через Instagram"></textarea>
+   </label>
+   <label for="f-email">Електронна пошта
+    <input id="f-email" type="email" name="email" required placeholder="name@example.com" autocomplete="email">
+   </label>
+   <label for="f-phone">Номер телефону
+    <input id="f-phone" type="tel" name="Телефон" required placeholder="+380 ..." autocomplete="tel" pattern="[0-9+()\s\-]{7,20}">
+   </label>
+   <div class="msg" id="msg" role="status" aria-live="polite"></div>
+   <button class="btn" type="submit" id="sendBtn">Надіслати заявку</button>
+   <p class="note">Натискаючи кнопку, ви погоджуєтеся, що ми використаємо ці дані лише для відповіді на вашу заявку.</p>
+  </form>
+ </div>
+</section>
+
+<footer>
+ <div class="wrap">
+  <span>© <span id="yr">2026</span> ФОП Гринчук — реклама і маркетинг</span>
+  <a href="#top">Нагору ↑</a>
+ </div>
+</footer>
+
+<script>
+{
+const ic = {
+ target:'<circle cx="22" cy="22" r="18" fill="#1536d4"/><circle cx="22" cy="22" r="11" fill="#fff"/><circle cx="22" cy="22" r="5" fill="#ffe04a"/>',
+ search:'<circle cx="19" cy="19" r="13" fill="#1536d4"/><circle cx="19" cy="19" r="7" fill="#fff"/><rect x="28" y="27" width="6" height="15" rx="3" transform="rotate(-45 31 34)" fill="#ffe04a"/>',
+ phone:'<rect x="11" y="3" width="22" height="38" rx="6" fill="#1536d4"/><rect x="15" y="9" width="14" height="22" rx="2" fill="#fff"/><circle cx="22" cy="36" r="2.5" fill="#ffe04a"/>',
+ brush:'<rect x="6" y="6" width="32" height="32" rx="8" fill="#1536d4"/><circle cx="17" cy="18" r="5" fill="#ffe04a"/><path d="M8 34 L20 22 L28 30 L32 26 L38 32 L38 38 L8 38Z" fill="#fff"/>',
+ web:'<rect x="3" y="7" width="38" height="30" rx="6" fill="#1536d4"/><rect x="3" y="7" width="38" height="8" rx="4" fill="#0e2699"/><rect x="9" y="20" width="18" height="5" rx="2" fill="#fff"/><rect x="9" y="28" width="12" height="4" rx="2" fill="#ffe04a"/>',
+ plane:'<circle cx="22" cy="22" r="19" fill="#1536d4"/><path d="M11 22 L33 13 L28 33 L21 26 L17 30 L17 24Z" fill="#fff"/><path d="M17 24 L33 13 L21 26Z" fill="#ffe04a"/>',
+ mail:'<rect x="4" y="9" width="36" height="26" rx="5" fill="#1536d4"/><path d="M6 12 L22 24 L38 12" fill="none" stroke="#ffe04a" stroke-width="4" stroke-linejoin="round"/>',
+ chart:'<rect x="6" y="24" width="8" height="14" rx="2" fill="#1536d4"/><rect x="18" y="16" width="8" height="22" rx="2" fill="#1536d4"/><rect x="30" y="6" width="8" height="32" rx="2" fill="#ffe04a"/>'
+};
+const services = [
+ ['target','Таргетована реклама','Реклама у Facebook та Instagram на вашу аудиторію: за містом, віком, інтересами.'],
+ ['search','Реклама в Google','Пошукова реклама й банери Google Ads — вас бачать ті, хто вже шукає послугу.'],
+ ['phone','Ведення соцмереж (SMM)','Контент-план, пости, сторіз і оформлення профілю, щоб сторінка продавала.'],
+ ['brush','Дизайн реклами','Банери, макети для постів, листівки, логотип і фірмовий стиль.'],
+ ['web','Сайт або лендінг','Проста продаюча сторінка чи невеликий інтернет-магазин із формою заявок.'],
+ ['plane','Реклама в Telegram','Підбір каналів, розміщення постів і ведення власного Telegram-каналу.'],
+ ['mail','Email-розсилки','Розсилки для ваших клієнтів: акції, новини, нагадування.'],
+ ['chart','Консультація і аудит','Розбір вашої реклами та сторінок: що працює, а на чому втрачаються гроші.']
+];
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const grid = document.getElementById('svcGrid');
+grid.innerHTML = services.map(([i,t,d]) =>
+ `<article class="svc"><svg viewBox="0 0 44 44" aria-hidden="true">${ic[i]}</svg><h3>${esc(t)}</h3><p>${esc(d)}</p><button type="button" data-s="${esc(t)}">Замовити →</button></article>`
+).join('');
+const sel = document.getElementById('f-service');
+sel.innerHTML = '<option value="" disabled selected>Оберіть послугу</option>' +
+ services.map(s => `<option>${esc(s[1])}</option>`).join('') + '<option>Інше / комплексно</option>';
+grid.addEventListener('click', e => {
+ const b = e.target.closest('button[data-s]'); if (!b) return;
+ sel.value = b.dataset.s;
+ document.getElementById('order').scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'});
+ setTimeout(() => document.getElementById('f-desc').focus({preventScroll:true}), 500);
+});
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+const form = document.getElementById('orderForm'), msg = document.getElementById('msg'), btn = document.getElementById('sendBtn');
+const show = (cls, text) => { msg.className = 'msg ' + cls; msg.textContent = text; };
+form.addEventListener('submit', async e => {
+ e.preventDefault();
+ if (!form.checkValidity()) {
+  const bad = form.querySelector(':invalid');
+  const names = {'f-service':'оберіть послугу','f-desc':'опишіть задачу','f-email':'вкажіть правильну пошту','f-phone':'вкажіть номер телефону'};
+  show('bad', 'Будь ласка, ' + (names[bad.id] || 'заповніть усі поля') + '.');
+  bad.focus(); return;
+ }
+ btn.disabled = true; btn.textContent = 'Надсилаємо…';
+ try {
+  const data = Object.fromEntries(new FormData(form));
+  const r = await fetch('https://formsubmit.co/ajax/hrynchukihor@gmail.com', {
+   method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'}, body: JSON.stringify(data)
+  });
+  const j = await r.json().catch(() => ({}));
+  if (r.ok && String(j.success) !== 'false') {
+   form.reset(); sel.value = '';
+   show('ok', 'Дякуємо! Заявку отримано — ми зв\'яжемося з вами протягом доби.');
+  } else throw new Error(j.message || 'error');
+ } catch (err) {
+  show('bad', 'Не вдалося надіслати. Спробуйте ще раз або напишіть на hrynchukihor@gmail.com.');
+ } finally {
+  btn.disabled = false; btn.textContent = 'Надіслати заявку';
+ }
+});
+}
+</script>
+</body>
+</html>
