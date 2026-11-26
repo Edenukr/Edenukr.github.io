@@ -208,9 +208,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
  <div class="wrap">
   <div>
    <h2>Замовити послугу</h2>
-   <p class="lead">Заповніть форму — ми отримаємо вашу заявку на пошту і відповімо протягом доби.</p>
+   <p class="lead">Заповніть форму — ми отримаємо вашу заявку і відповімо протягом доби.</p>
    <div class="contacts" id="contact">
-    <div>Пошта: <a href="mailto:hrynchukihor@gmail.com">hrynchukihor@gmail.com</a></div>
     <div>Телефон: <a href="tel:+380969004710">+380 96 900 47 10</a></div>
    </div>
   </div>
@@ -305,7 +304,7 @@ form.addEventListener('submit', async e => {
    show('ok', 'Дякуємо! Заявку отримано — ми зв\'яжемося з вами протягом доби.');
   } else throw new Error(j.message || 'error');
  } catch (err) {
-  show('bad', 'Не вдалося надіслати. Спробуйте ще раз або напишіть на hrynchukihor@gmail.com.');
+  show('bad', 'Не вдалося надіслати. Спробуйте ще раз або зателефонуйте: +380 96 900 47 10.');
  } finally {
   btn.disabled = false; btn.textContent = 'Надіслати заявку';
  }
